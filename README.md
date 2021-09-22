@@ -8,13 +8,10 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [交流群](#交流群)
-    * [QQ交流群](#qq交流群)
 * [Install (安装)](#install-安装)
 * [Uninstall (卸载)](#uninstall-卸载)
-* [Upgrade Plugins (升级插件)](#upgrade-plugins-升级插件)
+* [Upgrade Plugins (升级插件/vim8-pack特性)](#upgrade-plugins-升级插件vim8-pack特性)
 * [Features (特色功能)](#features-特色功能)
-    * [vim-plug](#vim-plug)
     * [Statusline (状态栏)](#statusline-状态栏)
     * [Backup (备份路径)](#backup-备份路径)
     * [Template (模板)](#template-模板)
@@ -49,13 +46,6 @@
 <!-- vim-markdown-toc -->
 </details>
 
-## 交流群
-
-### QQ交流群
-
-群号：1019096841
-扫码进群：
-![QQ Group QR Code](./img/QR.png)
 
 ## Install (安装)
 
@@ -72,20 +62,13 @@ rm -rf ~/.vim
 rm -rf ~/.vimtmp
 ```
 
-## Upgrade Plugins (升级插件)
+## Upgrade Plugins (升级插件/vim8-pack特性)
 
 ```bash
-vim +PlugClean[!] +PlugUpdate +qa
+git submodule update --recursive --remote
 ```
 
 ## Features (特色功能)
-
-### vim-plug
-
-Base on vim-plug, A minimalist Vim plugin manager.
-新一代的Vim配置管理组件，体积最小，plugit用了并行下载，速度较顺序下载的vundle快很多！！！
-
-https://github.com/junegunn/vim-plug
 
 ### Statusline (状态栏)
 
