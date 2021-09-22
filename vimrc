@@ -129,33 +129,6 @@ hi User6 cterm=None ctermfg=246 ctermbg=237
 hi User7 cterm=None ctermfg=250 ctermbg=238
 hi User8 cterm=None ctermfg=249 ctermbg=240
 
-"
-" vim-plug
-"
-call plug#begin('~/.vim/plug')
-" Plug 'vim-scripts/taglist.vim'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'wgwoods/vim-systemd-syntax'
-Plug 'leafgarland/typescript-vim'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-lua-ftplugin'
-Plug 'pangloss/vim-javascript'
-Plug 'airblade/vim-gitgutter'
-Plug 'posva/vim-vue'
-Plug 'alvan/vim-php-manual'
-Plug 'cespare/vim-toml'
-Plug 'godlygeek/tabular'
-Plug 'kien/ctrlp.vim'
-Plug 'mzlogin/vim-markdown-toc'
-Plug 'plasticboy/vim-markdown'
-Plug 'roxma/vim-paste-easy'
-Plug 'scrooloose/nerdtree'
-Plug 'tmhedberg/matchit'
-Plug 'tpope/vim-commentary'
-Plug 'vim-syntastic/syntastic'
-Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippet'
-call plug#end()
 
 let g:vim_markdown_folding_disabled = 1
 let g:gitgutter_max_signs=10000
