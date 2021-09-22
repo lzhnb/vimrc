@@ -40,3 +40,6 @@
 [submodule "pack/plugins/start/vim-systemd-syntax"]
 	path = pack/plugins/start/vim-systemd-syntax
 	url = git@github.com:wgwoods/vim-systemd-syntax.git
+[submodule "pack/plugins/start/vim-snippets"]
+	path = pack/plugins/start/vim-snippets
+	url = git@github.com:honza/vim-snippets.git
