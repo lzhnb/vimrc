@@ -22,9 +22,6 @@
 [submodule "pack/plugins/start/matchit"]
 	path = pack/plugins/start/matchit
 	url = git@github.com:tmhedberg/matchit.git
-[submodule "pack/plugins/start/syntastic"]
-	path = pack/plugins/start/syntastic
-	url = git@github.com:vim-syntastic/syntastic.git
 [submodule "pack/plugins/start/ultisnips"]
 	path = pack/plugins/start/ultisnips
 	url = git@github.com:sirver/ultisnips.git
@@ -43,3 +40,6 @@
 [submodule "pack/plugins/start/vim-snippets"]
 	path = pack/plugins/start/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
+[submodule "pack/plugins/start/ale"]
+	path = pack/plugins/start/ale
+	url = git@github.com:dense-analysis/ale.git
