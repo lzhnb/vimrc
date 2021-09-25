@@ -1,6 +1,6 @@
 " ____    ____  __   _______   _______
 " \   \  /   / |  | |       \ |   ____|
-"  \   \/   /  |  | |  .--.  ||  |__
+"  \   \/   /  |  | |  '--'  ||  |__
 "   \      /   |  | |  |  |  ||   __|
 "    \    /    |  | |  '--'  ||  |____
 "     \__/     |__| |_______/ |_______|
@@ -15,8 +15,8 @@ filetype on
 filetype plugin indent on
 filetype plugin on
 let g:is_bash=1
-let $VIMFILES=$HOME.'/.vim'
-let @w = 'x~n'
+let $VIMFILES=$HOME."/.vim"
+let @w = "x~n"
 nmap <c-l> <esc>:noh<cr>
 nmap <leader>3 :NERDTreeFind<cr>
 nmap <leader>a :set filetype=awk        <CR>
@@ -35,7 +35,8 @@ nmap <leader>v :set filetype=vim        <CR>
 nmap <leader>y :set filetype=python     <CR>
 set ambiwidth=double
 set autoread
-set autowriteall
+" set autowriteall
+set backup
 set backspace=2
 set smartindent cindent autoindent
 set shiftwidth=4 tabstop=4 smarttab
@@ -74,7 +75,7 @@ syntax on
 "" statusline
 "
 "function Version ()
-"    return system("grep -o '^v[0-9]*' ~/.vim/version|tr -d '\n'")
+"    return system("grep -o "^v[0-9]*" ~/.vim/version|tr -d "\n"")
 "endfunction
 "set laststatus=2
 "set statusline=(Vide.%{Version()})\ \ %<%f
@@ -84,21 +85,21 @@ syntax on
 "set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 function! Buf_total_num()
-    return len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+    return len(filter(range(1, bufnr("$")), "buflisted(v:val)"))
 endfunction
 function! File_size(f)
     let l:size = getfsize(expand(a:f))
     if l:size == 0 || l:size == -1 || l:size == -2
-        return ''
+        return ""
     endif
     if l:size < 1024
-        return l:size.' bytes'
+        return l:size." bytes"
     elseif l:size < 1024*1024
-        return printf('%.1f', l:size/1024.0).'k'
+        return printf("%.1f", l:size/1024.0)."k"
     elseif l:size < 1024*1024*1024
-        return printf('%.1f', l:size/1024.0/1024.0) . 'm'
+        return printf("%.1f", l:size/1024.0/1024.0) . "m"
     else
-        return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
+        return printf("%.1f", l:size/1024.0/1024.0/1024.0) . "g"
     endif
 endfunction
 set laststatus=2
@@ -107,7 +108,7 @@ set statusline=%<%1*[B-%n]%*
 set statusline+=%2*[TOT:%{Buf_total_num()}]%*
 set statusline+=%3*\ %{File_size(@%)}\ %*
 set statusline+=%4*\ %F\ %*
-" set statusline+=%5*『\ %{exists('g:loaded_ale')?ALEGetStatusLine():''}』%{exists('g:loaded_fugitive')?fugitive#statusline():''}%*
+" set statusline+=%5*『\ %{exists("g:loaded_ale")?ALEGetStatusLine():""}』%{exists("g:loaded_fugitive")?fugitive#statusline():""}%*
 set statusline+=%6*\ %m%r%y\ %*
 set statusline+=%=%7*\ %{&ff}\ \|\ %{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\ \|\"}\ %-14.(%l:%c%V%)%*
 set statusline+=%8*\ %P\ %*
@@ -130,8 +131,8 @@ let g:gitgutter_max_signs=10000
 "
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_quiet_messages = { "level": "errors" }
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_go_checkers = ["golint", "govet", "errcheck"]
+let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["go"] }
 
 "
 " go-vim
@@ -143,11 +144,11 @@ let g:go_fmt_command = "goimports"
 "
 " NERDTree
 "
-let g:NERDTreeDirArrowExpandable  = '@'
+let g:NERDTreeDirArrowExpandable  = "@"
 " let g:NERDTreeNodeDelimiter       = "\u00a0"
-let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeDirArrowCollapsible = "-"
 let g:NERDTreeShowHidden          = 0
-let g:NERDTreeBookmarksFile       = $HOME.'/.vimtmp/NerdBookmarks.txt'
+let g:NERDTreeBookmarksFile       = $HOME."/.vimtmp/NerdBookmarks.txt"
 let g:NERDTreeShowBookmarks       = 1
 let g:NERDTreeShowFiles           = 1
 let g:NERDTreeShowLineNumbers     = 0
@@ -155,19 +156,19 @@ let g:NERDTreeWinSize             = 29
 let g:NERDTreeMinimalUI           = 1
 let g:NERDTreeDirArrows           = 1
 let g:NERDTreeIgnore              = [
-            \ '.*\.class',
-            \ '.*\.pyc',
-            \ '.*\.chm',
-            \ '.*\.ttf',
-            \ '.*\.lnk',
-            \ '.*\.cproj',
-            \ '.*\.exe',
-            \ '.*\.dll',
-            \ '.*\.out',
-            \ '.*\.files',
-            \ '.*\.zip',
-            \ '.*\.rar',
-            \ '.*\.gif'
+            \ ".*\.class",
+            \ ".*\.pyc",
+            \ ".*\.chm",
+            \ ".*\.ttf",
+            \ ".*\.lnk",
+            \ ".*\.cproj",
+            \ ".*\.exe",
+            \ ".*\.dll",
+            \ ".*\.out",
+            \ ".*\.files",
+            \ ".*\.zip",
+            \ ".*\.rar",
+            \ ".*\.gif"
             \ ]
 let g:NERDTreeIndicatorMapCustom = {
             \ "Modified"  : "✹",
@@ -187,19 +188,19 @@ let g:NERDTreeIndicatorMapCustom = {
 " Making CtrlP.vim load 100x faster — A Tiny Piece of Vim — Medm
 " https://medium.com/a-tiny-piece-of-vim/making-ctrlp-vim-load-100x-faster-7a722fae7df6#.emcvo89nx
 let g:ctrlp_user_command = [
-            \ '.git/',
-            \ 'git --git-dir=%s/.git ls-files -oc --exclude-standard'
+            \ ".git/",
+            \ "git --git-dir=%s/.git ls-files -oc --exclude-standard"
             \ ]
-let g:ctrlp_match_window       = 'bottom,order:btt,min:5,max:5,results:10'
-let g:ctrlp_cmd                = 'CtrlPMixed'
+let g:ctrlp_match_window       = "bottom,order:btt,min:5,max:5,results:10"
+let g:ctrlp_cmd                = "CtrlPMixed"
 let g:ctrlp_mruf_default_order = 1
 
 "
 " utime.vim
 "
-let g:timeStampFormat = '170101'
-let g:timeStampString = '%y%m%d'
-let g:timeStampLeader = 'version'
+let g:timeStampFormat = "170101"
+let g:timeStampString = "%y%m%d"
+let g:timeStampLeader = "version"
 
 "
 " snips
@@ -211,21 +212,21 @@ let g:timeStampLeader = 'version'
 "
 let g:ale_set_highlights = 0
 let g:ale_fix_on_save = 1
-let g:ale_echo_msg_format = '[#%linter%#] %s [%severity%]'
-let g:ale_statusline_format = ['E•%d', 'W•%d', 'OK']
+let g:ale_echo_msg_format = "[#%linter%#] %s [%severity%]"
+let g:ale_statusline_format = ["E•%d", "W•%d", "OK"]
 
-let g:ale_sign_error = 'X'
-let g:ale_sign_warning = 'W'
-let g:ale_statusline_format = ['X %d', 'W %d', 'Y OK'] " integrate into statuline
+let g:ale_sign_error = "X"
+let g:ale_sign_warning = "W"
+let g:ale_statusline_format = ["X %d", "W %d", "Y OK"] " integrate into statuline
 
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_error_str = "E"
+let g:ale_echo_msg_warning_str = "W"
+let g:ale_echo_msg_format = "[%linter%] %s [%severity%]"
 
 let g:ale_completion_delay = 500
 let g:ale_echo_delay = 20
 let g:ale_lint_delay = 500
-let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_text_changed = "normal"
 let g:ale_lint_on_insert_leave = 1
 
 " Check Python files with flake8 and pylint.
