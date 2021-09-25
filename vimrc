@@ -6,17 +6,11 @@
 "     \__/     |__| |_______/ |_______|
 "
 
-autocmd BufNewFile *.lua,*.sh,*.php 0r !~/.vim/template.sh %:e
-autocmd BufRead,BufNewFile *.conf setfiletype conf
-autocmd BufRead *.php set includeexpr=substitute(v:fname,'\\\','/','g')
-autocmd BufRead *.php set include=^#\s*use
-autocmd BufRead *.php set suffixesadd+=.php
-autocmd BufWinEnter *.volt,*.tp,*.mako set filetype=html
-autocmd BufWinEnter *.sls set filetype=yaml
-autocmd GUIEnter * silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
-autocmd FileType php setlocal commentstring=//\ %s
-call system('mkdir -p ~/.vimtmp/undodir ~/.vimtmp/backupdir ~/.vimtmp/directory')
-colorscheme torte
+set nocompatible
+
+colorscheme one
+set background=dark
+set t_Co=256
 filetype on
 filetype plugin indent on
 filetype plugin on
@@ -42,8 +36,7 @@ nmap <leader>y :set filetype=python     <CR>
 set ambiwidth=double
 set autoread
 set autowriteall
-set backup
-set bs+=start
+set backspace=2
 set smartindent cindent autoindent
 set shiftwidth=4 tabstop=4 smarttab
 set clipboard+=unnamed
@@ -65,7 +58,6 @@ set path+=./model/,./ctrl/,./lib/,*/templates/,*/static/,..,*/src/main/java/
 set printoptions=formfeed:y,header:0,paper:A4,duplex:off,syntax:n
 set scrolloff=6
 set shell=/bin/bash
-set nocompatible
 set showcmd                                 " Show cmd in vim-cmdline.
 set t_Co=256                                " Make vim look better in putty.
 set textwidth=0
@@ -74,7 +66,7 @@ set undodir=~/.vimtmp/undodir
             \ backupdir=~/.vimtmp/backupdir
             \ viewdir=~/.vimtmp/view
             \ undofile
-set vb t_vb=                                " Turn off bi-sound of vim.
+set visualbell t_vb=
 set wildignore+=*.git\\*,*.tgz,*.zip,*.url,*.pyc,*.class
 syntax on
 
@@ -115,7 +107,7 @@ set statusline=%<%1*[B-%n]%*
 set statusline+=%2*[TOT:%{Buf_total_num()}]%*
 set statusline+=%3*\ %{File_size(@%)}\ %*
 set statusline+=%4*\ %F\ %*
-set statusline+=%5*『\ %{exists('g:loaded_ale')?ALEGetStatusLine():''}』%{exists('g:loaded_fugitive')?fugitive#statusline():''}%*
+" set statusline+=%5*『\ %{exists('g:loaded_ale')?ALEGetStatusLine():''}』%{exists('g:loaded_fugitive')?fugitive#statusline():''}%*
 set statusline+=%6*\ %m%r%y\ %*
 set statusline+=%=%7*\ %{&ff}\ \|\ %{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\ \|\"}\ %-14.(%l:%c%V%)%*
 set statusline+=%8*\ %P\ %*
@@ -212,11 +204,7 @@ let g:timeStampLeader = 'version'
 "
 " snips
 "
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+" TODO: add the snips plugin
 
 "
 " ale

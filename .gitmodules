@@ -22,9 +22,6 @@
 [submodule "pack/plugins/start/matchit"]
 	path = pack/plugins/start/matchit
 	url = git@github.com:tmhedberg/matchit.git
-[submodule "pack/plugins/start/ultisnips"]
-	path = pack/plugins/start/ultisnips
-	url = git@github.com:sirver/ultisnips.git
 [submodule "pack/plugins/start/vim-gitgutter"]
 	path = pack/plugins/start/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
@@ -37,9 +34,9 @@
 [submodule "pack/plugins/start/vim-systemd-syntax"]
 	path = pack/plugins/start/vim-systemd-syntax
 	url = git@github.com:wgwoods/vim-systemd-syntax.git
-[submodule "pack/plugins/start/vim-snippets"]
-	path = pack/plugins/start/vim-snippets
-	url = git@github.com:honza/vim-snippets.git
 [submodule "pack/plugins/start/ale"]
 	path = pack/plugins/start/ale
 	url = git@github.com:dense-analysis/ale.git
+[submodule "pack/plugins/start/vim-one"]
+	path = pack/plugins/start/vim-one
+	url = git@github.com:rakr/vim-one.git
