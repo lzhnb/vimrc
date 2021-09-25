@@ -9,6 +9,7 @@
 set nocompatible
 
 colorscheme onedark
+set background=dark
 set t_Co=256
 filetype on
 filetype plugin indent on
