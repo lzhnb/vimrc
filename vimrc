@@ -8,8 +8,7 @@
 
 set nocompatible
 
-colorscheme one
-set background=dark
+colorscheme onedark
 set t_Co=256
 filetype on
 filetype plugin indent on
