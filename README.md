@@ -1,5 +1,3 @@
-![screenshots](./img/screenshots.png)
-
 目录
 ===
 
