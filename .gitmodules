@@ -22,3 +22,6 @@
 [submodule "pack/plugins/start/LeaderF"]
 	path = pack/plugins/start/LeaderF
 	url = git@github.com:Yggdroot/LeaderF.git
+[submodule "pack/plugins/start/lightline.vim"]
+	path = pack/plugins/start/lightline.vim
+	url = git@github.com:itchyny/lightline.vim.git
