@@ -12,9 +12,8 @@ set nocompatible
 let $VIMFILES=$HOME."/.vim"
 
 """ theme
-colorscheme onedark
-set background=dark
-set t_Co=256
+colorscheme onedark " set theme
+set t_Co=256        " make vim look better in putty
 
 """ filetype setting
 filetype on
@@ -35,54 +34,69 @@ nmap <leader>t :set filetype=txt        <CR>
 nmap <leader>v :set filetype=vim        <CR>
 nmap <leader>y :set filetype=python     <CR>
 
-""" tell plugins the default bash
+" tell plugins the default bash
 let g:is_bash=1
-
-let @w = "x~n"
-nmap <c-l> <esc>:noh<cr>
-set ambiwidth=double
-set autoread
-" set autowriteall
-set backup
-set backspace=2
-set smartindent cindent autoindent
-set shiftwidth=4 tabstop=4 smarttab
-set clipboard+=unnamed
-set complete-=i
-set cursorline
-set expandtab
-set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936 fileencoding=utf-8
-set foldmethod=manual
-set hidden hlsearch
-set ignorecase smartcase
-set noautochdir
-set noshowmatch
-set nowrapscan
-set number
-set nobackup
-set noswapfile
-set pastetoggle=<F5>
-set path+=./model/,./ctrl/,./lib/,*/templates/,*/static/,..,*/src/main/java/
-set printoptions=formfeed:y,header:0,paper:A4,duplex:off,syntax:n
-set scrolloff=6
 set shell=/bin/bash
-set showcmd                                 " Show cmd in vim-cmdline.
-set t_Co=256                                " Make vim look better in putty.
-set textwidth=0
-set undodir=~/.vimtmp/undodir
+
+" encoding setting
+set ambiwidth=double
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936
+set fileencoding=utf-8
+
+" io setting
+set autoread           " extern write protection
+set nobackup           " delete backup file once writting
+set noswapfile         " do not generate temp file
+set clipboard+=unnamed " share the clipboard
+set pastetoggle=<F5>   " switch the paste and nopaste mode
+" set autowriteall       " writing for each modify
+
+" indent setting
+set smartindent
+set cindent
+set autoindent
+set smarttab
+set shiftwidth=4 " first line
+set tabstop=4    " other lines
+set expandtab
+
+" interface setting
+syntax on
+set showcmd           " Show cmd in vim-cmdline.
+set number            " show line number
+set backspace=2       " define the range of backsapce
+set cursorline        " highlight current line
+set hlsearch          " highlight search result
+set ignorecase        " ignoring case in a pattern 
+set smartcase         " help for re search
+set complete-=i       " complete content not found from include file 
+set visualbell t_vb=  " close the bell and do not shining
+set noautochdir       " do not change work dir according to current file
+set foldmethod=manual " fold block manually
+set noshowmatch       " do not showmatch
+set wrapscan          " search wrap around the end of the file 
+set scrolloff=6       " set the minimum offset between top/bottom and current line
+set textwidth=0       " maximum width of text that is being inserted
+
+" buffer setting
+set hidden " hide the buffer files
+
+" path setting
+set undodir=~/.vimtmp/undodir " set the undo directory
             \ directory=~/.vimtmp/directory
             \ backupdir=~/.vimtmp/backupdir
             \ viewdir=~/.vimtmp/view
             \ undofile
-set visualbell t_vb=
+" ignore some files and dirs to accelerate search(ctrlp)
 set wildignore+=*.git\\*,*.tgz,*.zip,*.url,*.pyc,*.class
-syntax on
 
 
-function! Buf_total_num()
+""" set the statusline output
+function! BufTotalNum()
     return len(filter(range(1, bufnr("$")), "buflisted(v:val)"))
 endfunction
-function! File_size(f)
+function! FileSize(f)
     let l:size = getfsize(expand(a:f))
     if l:size == 0 || l:size == -1 || l:size == -2
         return ""
@@ -100,22 +114,20 @@ endfunction
 set laststatus=2
 set statusline=%<%1*[B-%n]%*
 " TOT is an abbreviation for total
-set statusline+=%2*[TOT:%{Buf_total_num()}]%*
-set statusline+=%3*\ %{File_size(@%)}\ %*
+set statusline+=%2*[TOT:%{BufTotalNum()}]%*
+set statusline+=%3*\ %{FileSize(@%)}\ %*
 set statusline+=%4*\ %F\ %*
-" set statusline+=%5*『\ %{exists("g:loaded_ale")?ALEGetStatusLine():""}』%{exists("g:loaded_fugitive")?fugitive#statusline():""}%*
-set statusline+=%6*\ %m%r%y\ %*
-set statusline+=%=%7*\ %{&ff}\ \|\ %{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\ \|\"}\ %-14.(%l:%c%V%)%*
-set statusline+=%8*\ %P\ %*
+set statusline+=%5*\ %m%r%y\ %*
+set statusline+=%=%6*\ %{&ff}\ \|\ %{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\ \|\"}\ %-14.(%l:%c%V%)%*
+set statusline+=%7*\ %P\ %*
 " default bg for statusline is 236 in space-vim-dark
 hi User1 cterm=bold ctermfg=232 ctermbg=179
 hi User2 cterm=None ctermfg=214 ctermbg=242
 hi User3 cterm=None ctermfg=251 ctermbg=240
 hi User4 cterm=bold ctermfg=169 ctermbg=239
-hi User5 cterm=None ctermfg=208 ctermbg=238
-hi User6 cterm=None ctermfg=246 ctermbg=237
-hi User7 cterm=None ctermfg=250 ctermbg=238
-hi User8 cterm=None ctermfg=249 ctermbg=240
+hi User5 cterm=None ctermfg=246 ctermbg=237
+hi User6 cterm=None ctermfg=250 ctermbg=238
+hi User7 cterm=None ctermfg=249 ctermbg=240
 
 
 let g:vim_markdown_folding_disabled = 1

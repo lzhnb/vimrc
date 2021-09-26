@@ -95,8 +95,8 @@ Origin Vim config statusline, much faster than airline or powerline!
 
 ### Template (模板)
 
-- call system('bash ~/.vim/lua.template > /tmp/lua.template')
-- call system('bash ~/.vim/php.template > /tmp/php.template')
+- call system('bash ~/.vim/python.template > /tmp/python.template')
+- call system('bash ~/.vim/cpp.template > /tmp/cpp.template')
 
 ## 什么是Vim,为什么要使用Vim
 
@@ -319,8 +319,7 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 
 | 名称           | 功能                 |
 | -------------- | -------------------- |
-| vim-phpmanual  | php文档，`<s-k>`查询 |
-| syntastic      | 语法检查             |
+| ale            | 语法检查             |
 | ctrlp.vim      | 文件跳转             |
 | nerdtree       | 浏览文件             |
 | vim-gitgutter  | 观察git状态          |
