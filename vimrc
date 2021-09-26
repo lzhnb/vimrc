@@ -8,17 +8,18 @@
 
 set nocompatible
 
+""" set the config root
+let $VIMFILES=$HOME."/.vim"
+
+""" theme
 colorscheme onedark
 set background=dark
 set t_Co=256
+
+""" filetype setting
 filetype on
-filetype plugin indent on
+filetype indent on
 filetype plugin on
-let g:is_bash=1
-let $VIMFILES=$HOME."/.vim"
-let @w = "x~n"
-nmap <c-l> <esc>:noh<cr>
-nmap <leader>3 :NERDTreeFind<cr>
 nmap <leader>a :set filetype=awk        <CR>
 nmap <leader>c :set filetype=css        <CR>
 nmap <leader>d :set filetype=htmldjango <CR>
@@ -33,6 +34,12 @@ nmap <leader>s :set filetype=sh         <CR>
 nmap <leader>t :set filetype=txt        <CR>
 nmap <leader>v :set filetype=vim        <CR>
 nmap <leader>y :set filetype=python     <CR>
+
+""" tell plugins the default bash
+let g:is_bash=1
+
+let @w = "x~n"
+nmap <c-l> <esc>:noh<cr>
 set ambiwidth=double
 set autoread
 " set autowriteall
@@ -71,18 +78,6 @@ set visualbell t_vb=
 set wildignore+=*.git\\*,*.tgz,*.zip,*.url,*.pyc,*.class
 syntax on
 
-"
-"" statusline
-"
-"function Version ()
-"    return system("grep -o "^v[0-9]*" ~/.vim/version|tr -d "\n"")
-"endfunction
-"set laststatus=2
-"set statusline=(Vide.%{Version()})\ \ %<%f
-"set statusline+=%w%h%m%r
-"set statusline+=\ %{getcwd()}
-"set statusline+=\ [%{&ff}:%{&fenc}:%Y]
-"set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 function! Buf_total_num()
     return len(filter(range(1, bufnr("$")), "buflisted(v:val)"))
@@ -131,21 +126,12 @@ let g:gitgutter_max_signs=10000
 "
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_quiet_messages = { "level": "errors" }
-let g:syntastic_go_checkers = ["golint", "govet", "errcheck"]
-let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["go"] }
-
-"
-" go-vim
-"
-let g:go_version_warning = 0
-let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
 
 "
 " NERDTree
 "
 let g:NERDTreeDirArrowExpandable  = "@"
-" let g:NERDTreeNodeDelimiter       = "\u00a0"
+nmap <leader>3 :NERDTreeFind            <CR>
 let g:NERDTreeDirArrowCollapsible = "-"
 let g:NERDTreeShowHidden          = 0
 let g:NERDTreeBookmarksFile       = $HOME."/.vimtmp/NerdBookmarks.txt"

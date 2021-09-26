@@ -34,6 +34,7 @@
     * [分割窗口](#分割窗口)
     * [宏](#宏)
 * [Vim插件](#vim插件)
+    * [配置语法](#配置语法)
     * [必装插件](#必装插件)
     * [NERDTree操作命令](#nerdtree操作命令)
     * [vim-commentary操作命令](#vim-commentary操作命令)
@@ -302,6 +303,18 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 
 ## Vim插件
 
+### 配置语法
+`let ?:variable`
+| 名称              | 选项                                               |
+| ----------------- | -------------------------------------------------- |
+| buffer-variable   | b:     Local to the current buffer.                |
+| window-variable   | w:     Local to the current window.                |
+| tabpage-variable  | t:     Local to the current tab page.              |
+| local-variable    | l:     Local to a function.                        |
+| script-variable   | s:     Local to a :source'ed Vim script.           |
+| function-argument | a:     Function argument (only inside a function). |
+| vim-variable      | v:     Global, predefined by Vim.                  |
+
 ### 必装插件
 
 | 名称           | 功能                 |
@@ -358,8 +371,7 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 
 ### 其他
 
-- [用DBGPavim在Vim中调试PHP/Python程序](https://brookhong.github.io/2014/09/27/dbgpavim-cn.html)
 - [Cscope的使用（领略Vim + Cscope的强大魅力） - 面码的个人空间 - 开源中国社区](http://my.oschina.net/u/572632/blog/267471)
-- [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)
 - [Using tab pages - Vim Tips Wiki - Wikia](http://vim.wikia.com/wiki/Using_tab_pages)
-- powerline / airline
+
+
