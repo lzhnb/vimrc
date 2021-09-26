@@ -322,7 +322,7 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 | ale            | 语法检查             |
 | ctrlp.vim      | 文件跳转             |
 | nerdtree       | 浏览文件             |
-| vim-gitgutter  | 观察git状态          |
+| vim-signify    | 观察git/svn状态      |
 | vim-commentary | 强大的注释插件       |
 
 ### NERDTree操作命令

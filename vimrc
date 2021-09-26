@@ -81,6 +81,9 @@ set textwidth=0       " maximum width of text that is being inserted
 
 " buffer setting
 set hidden " hide the buffer files
+nmap <C-N> :bnext<CR>
+nmap <C-M> :bprev<CR>
+nmap <C-W> :bdelete<CR>
 
 " path setting
 set undodir=~/.vimtmp/undodir " set the undo directory
@@ -131,7 +134,6 @@ hi User7 cterm=None ctermfg=249 ctermbg=240
 
 
 let g:vim_markdown_folding_disabled = 1
-let g:gitgutter_max_signs=10000
 
 "
 " syntastic
@@ -242,5 +244,6 @@ let b:ale_warn_about_trailing_whitespace = 0
 nmap <Leader>en <Plug>(ale_next)
 nmap <Leader>ep <Plug>(ale_previous)
 nnoremap <Leader>ts :ALEToggle<CR>
+
 
 
