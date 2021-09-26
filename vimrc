@@ -30,7 +30,6 @@ nmap <leader>l :set filetype=lua        <CR>
 nmap <leader>m :set filetype=markdown   <CR>
 nmap <leader>p :set filetype=php        <CR>
 nmap <leader>s :set filetype=sh         <CR>
-nmap <leader>t :set filetype=txt        <CR>
 nmap <leader>v :set filetype=vim        <CR>
 nmap <leader>y :set filetype=python     <CR>
 
@@ -81,9 +80,9 @@ set textwidth=0       " maximum width of text that is being inserted
 
 " buffer setting
 set hidden " hide the buffer files
-nmap <C-N> :bnext<CR>
-nmap <C-M> :bprev<CR>
-nmap <C-W> :bdelete<CR>
+nmap <C-J> :bnext<CR>
+nmap <C-K> :bprev<CR>
+nmap <C-D> :bdelete<CR>
 
 " path setting
 set undodir=~/.vimtmp/undodir " set the undo directory
@@ -144,15 +143,21 @@ let g:syntastic_quiet_messages = { "level": "errors" }
 "
 " NERDTree
 "
-let g:NERDTreeDirArrowExpandable  = "@"
-nmap <leader>3 :NERDTreeFind            <CR>
-let g:NERDTreeDirArrowCollapsible = "-"
+
+" ctrl+t switch the nerdtree
+nmap <C-T> :NERDTreeToggle<CR> 
+let g:NERDTreeWinPos = "right" " set the nerdtree window in right
+
+" set the direction arrow
+let g:NERDTreeDirArrowExpandable  = "▸"
+let g:NERDTreeDirArrowCollapsible = "▾"
+
 let g:NERDTreeShowHidden          = 0
 let g:NERDTreeBookmarksFile       = $HOME."/.vimtmp/NerdBookmarks.txt"
 let g:NERDTreeShowBookmarks       = 1
 let g:NERDTreeShowFiles           = 1
-let g:NERDTreeShowLineNumbers     = 0
-let g:NERDTreeWinSize             = 29
+let g:NERDTreeShowLineNumbers     = 1
+let g:NERDTreeWinSize             = 35
 let g:NERDTreeMinimalUI           = 1
 let g:NERDTreeDirArrows           = 1
 let g:NERDTreeIgnore              = [
@@ -183,17 +188,37 @@ let g:NERDTreeIndicatorMapCustom = {
             \ }
 
 "
-" ctrlp
+" LeaderF
 "
-" Making CtrlP.vim load 100x faster — A Tiny Piece of Vim — Medm
-" https://medium.com/a-tiny-piece-of-vim/making-ctrlp-vim-load-100x-faster-7a722fae7df6#.emcvo89nx
-let g:ctrlp_user_command = [
-            \ ".git/",
-            \ "git --git-dir=%s/.git ls-files -oc --exclude-standard"
-            \ ]
-let g:ctrlp_match_window       = "bottom,order:btt,min:5,max:5,results:10"
-let g:ctrlp_cmd                = "CtrlPMixed"
-let g:ctrlp_mruf_default_order = 1
+let g:Lf_ReverseOrder = 1
+nmap <C-P> :LeaderfFile<CR>
+nmap <C-N> :LeaderfMru<CR>
+nmap <F2> :LeaderfFunction!<CR>
+nmap <leader>B :LeaderfBuffer<CR>
+nmap <leader>T :LeaderfTag<CR>
+let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
+
+let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+let g:Lf_WorkingDirectoryMode = 'Ac'
+let g:Lf_WindowHeight = 0.30
+let g:Lf_CacheDirectory = expand('~/.vim/cache')
+let g:Lf_ShowRelativePath = 0
+let g:Lf_HideHelp = 1
+let g:Lf_StlColorscheme = 'onedark'
+let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
+
+let g:Lf_ShowRelativePath = 0
+let g:Lf_HideHelp = 1
+let g:Lf_PreviewResult = {'Function':0, 'Colorscheme':1}
+let g:Lf_NormalMap = {
+            \ "File": [["<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>']],
+            \ "Buffer": [["<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<CR>']],
+            \ "Mru": [["<ESC>", ':exec g:Lf_py "mruExplManager.quit()"<CR>']],
+            \ "Tag": [["<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<CR>']],
+            \ "Function": [["<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<CR>']],
+            \ "Colorscheme": [["<ESC>", ':exec g:Lf_py "colorschemeExplManager.quit()"<CR>']],
+            \ }
+
 
 "
 " utime.vim
