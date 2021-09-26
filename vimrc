@@ -120,7 +120,8 @@ set statusline+=%2*[TOT:%{BufTotalNum()}]%*
 set statusline+=%3*\ %{FileSize(@%)}\ %*
 set statusline+=%4*\ %F\ %*
 set statusline+=%5*\ %m%r%y\ %*
-set statusline+=%=%6*\ %{&ff}\ \|\ %{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\ \|\"}\ %-14.(%l:%c%V%)%*
+set statusline+=%=
+set statusline+=%6*\ %{&ff}\ \|\ %{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\ \|\"}\ %-30.(%l:%c%V%)%*
 set statusline+=%7*\ %P\ %*
 " default bg for statusline is 236 in space-vim-dark
 hi User1 cterm=bold ctermfg=232 ctermbg=179
