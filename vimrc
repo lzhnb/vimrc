@@ -49,7 +49,7 @@ set autoread           " extern write protection
 set nobackup           " delete backup file once writting
 set noswapfile         " do not generate temp file
 set clipboard+=unnamed " share the clipboard
-set pastetoggle=<F5>   " switch the paste and nopaste mode
+set pastetoggle=<F3>   " switch the paste and nopaste mode
 " set autowriteall       " writing for each modify
 
 " indent setting
@@ -78,6 +78,9 @@ set noshowmatch       " do not showmatch
 set wrapscan          " search wrap around the end of the file 
 set scrolloff=6       " set the minimum offset between top/bottom and current line
 set textwidth=0       " maximum width of text that is being inserted
+
+" terminal
+nnoremap <F5> :wa<CR>:vertical botright terminal ++kill=terminal<CR>
 
 " buffer setting
 set hidden " hide the buffer files
