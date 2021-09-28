@@ -122,51 +122,34 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_quiet_messages = { "level": "errors" }
 
 "
-" NERDTree
+" Netrw(replace NERDTree)
 "
+let g:NetrwIsOpen=0
 
-" ctrl+t switch the nerdtree
-nmap <C-T> :NERDTreeToggle<CR> 
-let g:NERDTreeWinPos = "right" " set the nerdtree window in right
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Vexplore!
+    endif
+endfunction
 
-" set the direction arrow
-let g:NERDTreeDirArrowExpandable  = "▸"
-let g:NERDTreeDirArrowCollapsible = "▾"
-
-let g:NERDTreeShowHidden          = 0
-let g:NERDTreeBookmarksFile       = $HOME."/.vimtmp/NerdBookmarks.txt"
-let g:NERDTreeShowBookmarks       = 1
-let g:NERDTreeShowFiles           = 1
-let g:NERDTreeShowLineNumbers     = 1
-let g:NERDTreeWinSize             = 35
-let g:NERDTreeMinimalUI           = 1
-let g:NERDTreeDirArrows           = 1
-let g:NERDTreeIgnore              = [
-            \ ".*\.class",
-            \ ".*\.pyc",
-            \ ".*\.chm",
-            \ ".*\.ttf",
-            \ ".*\.lnk",
-            \ ".*\.cproj",
-            \ ".*\.exe",
-            \ ".*\.dll",
-            \ ".*\.out",
-            \ ".*\.files",
-            \ ".*\.zip",
-            \ ".*\.rar",
-            \ ".*\.gif"
-            \ ]
-let g:NERDTreeIndicatorMapCustom = {
-            \ "Modified"  : "✹",
-            \ "Staged"    : "✚",
-            \ "Untracked" : "✭",
-            \ "Renamed"   : "➜",
-            \ "Unmerged"  : "═",
-            \ "Deleted"   : "✖",
-            \ "Dirty"     : "✗",
-            \ "Clean"     : "✔︎",
-            \ "Unknown"   : "?"
-            \ }
+map <C-E> :call ToggleNetrw()<CR>
+let g:netrw_dirhistmax = 0          " do not generate .netrwhist
+let g:netrw_banner = 0              " hide the banner
+let g:netrw_winsize = 20            " set the size
+let g:netrw_browse_split = 3        " create a new tab page to open file
+let g:netrw_liststyle = 3           " tree explorer style
+let g:netrw_localrmdir = 'trash'    " remove file by trash
+let g:netrw_list_hide = '.*\.git,.*\.class,.*\.pyc,.*\.chm,.*\.ttf,.*\.lnk,.*\.cproj,.*\.exe,.*\.dll,.*\.out,.*\.files,.*\.zip,.*\.rar,.*\.gif'
 
 "
 " LeaderF
