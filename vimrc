@@ -49,7 +49,7 @@ set autoread           " extern write protection
 set nobackup           " delete backup file once writting
 set noswapfile         " do not generate temp file
 set clipboard+=unnamed " share the clipboard
-set pastetoggle=<F3>   " switch the paste and nopaste mode
+set pastetoggle=<F4>   " switch the paste and nopaste mode
 " set autowriteall       " writing for each modify
 
 " indent setting
@@ -67,8 +67,6 @@ syntax on
 set showcmd           " Show cmd in vim-cmdline.
 set number            " show line number
 set backspace=2       " define the range of backsapce
-set cursorline        " highlight current line
-set hlsearch          " highlight search result
 set ignorecase        " ignoring case in a pattern 
 set smartcase         " help for re search
 set complete-=i       " complete content not found from include file 
@@ -79,6 +77,11 @@ set noshowmatch       " do not showmatch
 set wrapscan          " search wrap around the end of the file 
 set scrolloff=6       " set the minimum offset between top/bottom and current line
 set textwidth=0       " maximum width of text that is being inserted
+
+" highlight
+set cursorline        " highlight current line
+nnoremap <F3> :set hlsearch!<CR> 
+
 
 " terminal
 nnoremap <F5> :wa<CR>:vertical botright terminal ++kill=terminal<CR>
@@ -97,6 +100,42 @@ set undodir=~/.vimtmp/undodir " set the undo directory
             \ undofile
 " ignore some files and dirs to accelerate search(ctrlp)
 set wildignore+=*.git\\*,*.tgz,*.zip,*.url,*.pyc,*.class
+
+"
+" syntastic
+"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_quiet_messages = { "level": "errors" }
+
+"
+" Netrw(replace NERDTree)
+"
+let g:NetrwIsOpen=0
+
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Vexplore!
+        set number
+    endif
+endfunction
+
+map <C-E> :call ToggleNetrw()<CR>
+let g:netrw_dirhistmax = 0          " do not generate .netrwhist
+let g:netrw_banner = 0              " hide the banner
+let g:netrw_winsize = 20            " set the size
+let g:netrw_browse_split = 4        " open in previous window
+let g:netrw_liststyle = 3           " tree explorer style
+let g:netrw_localrmdir = 'trash'    " remove file by trash
 
 source plugins.vim
 
