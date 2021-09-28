@@ -22,3 +22,6 @@
 [submodule "pack/plugins/start/lightline.vim"]
 	path = pack/plugins/start/lightline.vim
 	url = git@github.com:itchyny/lightline.vim.git
+[submodule "pack/plugins/start/vim-which-key"]
+	path = pack/plugins/start/vim-which-key
+	url = git@github.com:liuchengxu/vim-which-key.git
