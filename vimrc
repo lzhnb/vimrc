@@ -12,8 +12,9 @@ set nocompatible
 let $VIMFILES=$HOME."/.vim"
 
 """ theme
-colorscheme onedark " set theme
-set t_Co=256        " make vim look better in putty
+colorscheme one " set theme
+set background=dark
+set t_Co=256    " make vim look better in putty
 
 """ filetype setting
 filetype on
