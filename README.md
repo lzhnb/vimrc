@@ -10,7 +10,7 @@
 * [Uninstall (卸载)](#uninstall-卸载)
 * [Upgrade Plugins (升级插件/vim8-pack特性)](#upgrade-plugins-升级插件vim8-pack特性)
 * [Features (特色功能)](#features-特色功能)
-    * [Statusline (状态栏)](#statusline-状态栏)
+    * [lightline (状态栏)](#lightline-状态栏)
     * [Backup (备份路径)](#backup-备份路径)
     * [Template (模板)](#template-模板)
 * [什么是Vim,为什么要使用Vim](#什么是vim为什么要使用vim)
@@ -36,11 +36,8 @@
 * [Vim插件](#vim插件)
     * [配置语法](#配置语法)
     * [必装插件](#必装插件)
-    * [NERDTree操作命令](#nerdtree操作命令)
     * [vim-commentary操作命令](#vim-commentary操作命令)
-* [资源](#资源)
-    * [Vim资源](#vim资源)
-    * [其他](#其他)
+* [Acknowledge](#acknowledge)
 
 <!-- vim-markdown-toc -->
 </details>
@@ -69,23 +66,11 @@ git submodule update --recursive --remote
 
 ## Features (特色功能)
 
-### Statusline (状态栏)
+### lightline (状态栏)
 
-Origin Vim config statusline, much faster than airline or powerline!
-(Vim原生配置实现的状态栏，信息很全，比airline或者powerline快数倍！！！)
+lightline, much faster than airline or powerline!
+(极其轻量化实现的状态栏，信息很全，比airline或者powerline快数倍！！！)
 
-```bash
-(Vide)  README.md[+] /home/tjx/vide [unix:utf-8:MARKDOWN]       18,5      50%
-+----+  +----------+ +------------+ +-------------------+       +--+      +-+
-1       2         3                 4                           5         6
-```
-
-1. Logo
-1. Relative path (相对路径)
-1. Absolute path of directory (绝对路径)
-1. Format : file-encoding : filetype (文件类型)
-1. Row-position, col position (行号，列号)
-1. Percent of rows (当前行在总行数中的百分比)
 
 ### Backup (备份路径)
 
@@ -262,7 +247,6 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 | `:set fileencodings`           | 检测打开文档编码的顺序，一般设置为utf-8、cp936 |
 | `:set fileencoding`            | 保存文档的编码，一般为utf-8                    |
 | `:set encoding`                | Vim本身界面的编码，一般和文档无关              |
-| `\3`    | `NERDTree-Find`            |
 | `\a`     | `:set filetype=awk`        |
 | `\c`     | `:set filetype=css`        |
 | `\h`     | `:set filetype=html`       |
@@ -320,28 +304,9 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 | 名称           | 功能                 |
 | -------------- | -------------------- |
 | ale            | 语法检查             |
-| ctrlp.vim      | 文件跳转             |
-| nerdtree       | 浏览文件             |
+| LeaderF        | 文件跳转             |
 | vim-signify    | 观察git/svn状态      |
 | vim-commentary | 强大的注释插件       |
-
-### NERDTree操作命令
-
-| 命令 | 功能                                     |
-| ---- | ---------------------------------------- |
-| `o`  | 打开/关闭文件或目录                      |
-| `t`  | 在新标签页中打开                         |
-| `T`  | 在后台标签页打开                         |
-| `!`  | 执行此文件                               |
-| `p`  | 到上层目录                               |
-| `P`  | 到根目录                                 |
-| `K`  | 到第一个节点                             |
-| `J`  | 到最后一个节点                           |
-| `u`  | 打开上层目录                             |
-| `m`  | 显示文件系统菜单（添加、删除、移动操作） |
-| `?`  | 帮助，再按一下关闭                       |
-| `q`  | 关闭                                     |
-| `\3` | `NERDTree-Find`                          |
 
 ### vim-commentary操作命令
 
@@ -353,24 +318,8 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 | `gcu`  | 注释上一次注释的部分               |
 | `gcgc` | 取消一组相邻的注释                 |
 
-## 资源
-
-### Vim资源
-
-- [Vimbits](http://www.vimbits.com/)
-- [简明 Vim 练级攻略 | 酷 壳 - CoolShell.cn](http://coolshell.cn/articles/5426.html)
-- [[翻译]130+vim基本命令](http://wklken.me/posts/2013/08/17/130-essential-vim-commands.html#stq=&stp=0)
-- [Vimer的程序世界 | 一个vim使用者的程序世界](http://www.vimer.cn/)
-- [Vim实用技巧 (豆瓣)](https://book.douban.com/subject/25869486/)
-- [welcome home : vim online](http://www.vim.org/)
-- [Vim | 易水博客](http://easwy.com/blog/archives/tag/vim/)
-- [Vimcasts - Free screencasts about the text editor Vim](http://vimcasts.org/)
-- [VimGolf - real Vim ninjas count every keystroke!](http://vimgolf.com/)
-- [Vim Awesome](http://vimawesome.com/)
-
-### 其他
-
-- [Cscope的使用（领略Vim + Cscope的强大魅力） - 面码的个人空间 - 开源中国社区](http://my.oschina.net/u/572632/blog/267471)
-- [Using tab pages - Vim Tips Wiki - Wikia](http://vim.wikia.com/wiki/Using_tab_pages)
+## Acknowledge
+[vim-view](https://github.com/bilibili/vim-vide)
+[vim-one](https://github.com/rakr/vim-one)
 
 
