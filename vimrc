@@ -12,7 +12,8 @@ set nocompatible
 let $VIMFILES=$HOME."/.vim"
 
 """ theme
-colorscheme one " set theme
+" colorscheme one " set theme
+colorscheme tokyonight
 set background=dark
 set t_Co=256    " make vim look better in putty
 
@@ -137,6 +138,10 @@ let g:netrw_browse_split = 4        " open in previous window
 let g:netrw_liststyle = 3           " tree explorer style
 let g:netrw_localrmdir = 'trash'    " remove file by trash
 
-source plugins.vim
+
+"
+" read the config of plugins
+"
+source ~/.vim/plugins.vim
 
 

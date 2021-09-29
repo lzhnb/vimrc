@@ -25,3 +25,6 @@
 [submodule "pack/plugins/start/vim-which-key"]
 	path = pack/plugins/start/vim-which-key
 	url = git@github.com:liuchengxu/vim-which-key.git
+[submodule "pack/plugins/start/tokyonight-vim"]
+	path = pack/plugins/start/tokyonight-vim
+	url = git@github.com:ghifarit53/tokyonight-vim.git
