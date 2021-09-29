@@ -11,8 +11,8 @@
 * [Upgrade Plugins (升级插件/vim8-pack特性)](#upgrade-plugins-升级插件vim8-pack特性)
 * [Features (特色功能)](#features-特色功能)
     * [lightline (状态栏)](#lightline-状态栏)
+    * [vim-buftabline (顶部状态栏)](#vim-buftabline-顶部状态栏)
     * [Backup (备份路径)](#backup-备份路径)
-    * [Template (模板)](#template-模板)
 * [什么是Vim,为什么要使用Vim](#什么是vim为什么要使用vim)
     * [历史](#历史)
     * [帮助文档](#帮助文档)
@@ -76,17 +76,14 @@ git submodule update --recursive --remote
 lightline, much faster than airline or powerline!
 (极其轻量化实现的状态栏，信息很全，比airline或者powerline快数倍！！！)
 
+### vim-buftabline (顶部状态栏)
+vim-buftabline show the buffer name, light!
 
 ### Backup (备份路径)
 
 - 撤销文件夹 ~/.vimtmp/undodir
 - 备份文件夹 ~/.vimtmp/backupdir
 - 交换文件夹 ~/.vimtmp/directory .swp files
-
-### Template (模板)
-
-- call system('bash ~/.vim/python.template > /tmp/python.template')
-- call system('bash ~/.vim/cpp.template > /tmp/cpp.template')
 
 ## 什么是Vim,为什么要使用Vim
 
@@ -140,11 +137,11 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 | `:e file_name` 、`:o file_name` | 打开文件                                                     |
 | `:args file_name`               | 如果使用`vim file1 file2 [filen]`命令打开多个文件，就可以使用`:args file_name`命令在打开的文件之间切换 |
 | `:buffers`、`:ls`、`files`      | 查看缓冲区中的文件列表                                       |
-| `:bnext`                        | 切换到下一个缓冲区文件                                       |
-| `:bprevious`、`bpre`            | 切换到上一个缓冲区文件                                       |
+| `:bnext`                (ctrl+j)| 切换到下一个缓冲区文件                                       |
+| `:bprevious`、`bpre`    (ctrl+k)| 切换到上一个缓冲区文件                                       |
 | `:bfirst`                       | 切换到第一个缓冲区文件                                       |
 | `:blast`                        | 切换到最后一个缓冲区文件                                     |
-| `:bdelete file_name`            | 删除缓冲区文件                                               |
+| `:bdelete file_name`    (ctrl+d)| 删除缓冲区文件                                               |
 | `:badd file_name`               | 添加文件到缓冲区                                             |
 
 ### 退出/保存
@@ -252,16 +249,6 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 | `:set fileencodings`           | 检测打开文档编码的顺序，一般设置为utf-8、cp936 |
 | `:set fileencoding`            | 保存文档的编码，一般为utf-8                    |
 | `:set encoding`                | Vim本身界面的编码，一般和文档无关              |
-| `\a`     | `:set filetype=awk`        |
-| `\c`     | `:set filetype=css`        |
-| `\h`     | `:set filetype=html`       |
-| `\j`     | `:set filetype=javascript` |
-| `\l`     | `:set filetype=lua`        |
-| `\m`     | `:set filetype=markdown`   |
-| `\p`     | `:set filetype=php`        |
-| `\s`     | `:set filetype=sh`         |
-| `\v`     | `:set filetype=vim`        |
-| `\y`     | `:set filetype=python`     |
 
 ### 代码折叠
 
@@ -299,6 +286,7 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 | buffer-variable   | b:     Local to the current buffer.                |
 | window-variable   | w:     Local to the current window.                |
 | tabpage-variable  | t:     Local to the current tab page.              |
+| global-variable   | g:     Global.                                     |
 | local-variable    | l:     Local to a function.                        |
 | script-variable   | s:     Local to a :source'ed Vim script.           |
 | function-argument | a:     Function argument (only inside a function). |
@@ -313,6 +301,7 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 | vim-signify    | 观察git/svn状态      |
 | vim-commentary | 强大的注释插件       |
 | vim-surround   | 强大的括号辅助插件   |
+| jedi-vim       | 强大的 Python 补全   |
 
 ### vim-commentary操作命令
 
