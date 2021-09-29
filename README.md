@@ -45,6 +45,11 @@
 
 ## Install (安装)
 
+Install by conda:
+```bash
+conda install -c conda-forge vim
+```
+
 如果您之前有定制自己的`Vim`配置，**请先备份`~/.vim`目录**，以下操作会覆盖`~/.vim`目录
 ```bash
 wget http://upos-sz-staticks3.bilivideo.com/appstaticboss/vim-vide-20200812.tgz && tar xvf ./vim-vide-20200812.tgz -C ~
@@ -307,6 +312,7 @@ ed -> ex(sed) -> Vi -> Vim -> gVim / macvim
 | LeaderF        | 文件跳转             |
 | vim-signify    | 观察git/svn状态      |
 | vim-commentary | 强大的注释插件       |
+| vim-surround   | 强大的括号辅助插件   |
 
 ### vim-commentary操作命令
 

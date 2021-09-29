@@ -625,7 +625,7 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
 " }}}
 
-" myself
+" === myself ===
 " vim-buftabline{{{
 hi link BufTabLineCurrent TabLineSel
 hi link BufTabLineActive TabLine
@@ -633,7 +633,7 @@ hi link BufTabLineHidden TabLineFill
 hi link BufTabLineFill TabLineFill
 " }}}
 
-" netrw
+" netrw{{{
 hi link netrwDir Green
 hi link netrwClassify Green
 hi link netrwLink Grey
@@ -644,6 +644,7 @@ hi link netrwList Yellow
 hi link netrwHelpCmd Blue
 hi link netrwCmdSep Grey
 hi link netrwVersion Purple
+" }}}
 
 " Must appear at the end of the file to work around this oddity:
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ

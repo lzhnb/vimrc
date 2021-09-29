@@ -6,6 +6,26 @@
 let g:vim_markdown_folding_disabled = 1
 
 "
+" jedi
+"
+" set the omni function(search patter) and close the preview and doc window
+autocmd FileType python set omnifunc=python3complete#Complete
+autocmd FileType python setloc completeopt-=preview
+
+let g:jedi#completions_enabled = 0              " disable autocompletion
+let g:jedi#auto_initialization = 1              " auto initialization
+let g:jedi#auto_vim_configuration = 0           " skip some vim options
+let g:jedi#smart_auto_mappings = 0              " do not auto-mapping
+let g:jedi#popup_on_dot = 0                     " do not mention while dotting
+let g:jedi#show_call_signatures = "1"           " show the call signatures
+let g:jedi#show_call_signatures_delay = 0       " show signature fast
+let g:jedi#use_tabs_not_buffers = 0             " 
+let g:jedi#show_call_signatures_modes = 'i'     " ni = also in normal mode
+let g:jedi#enable_speed_debugging=0             " 
+" use supertab to help completion by pressing tab
+let g:SuperTabDefaultCompletionType = "context"
+
+"
 " lightline
 "
 set laststatus=2

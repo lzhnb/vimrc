@@ -20,19 +20,19 @@ set t_Co=256    " make vim look better in putty
 filetype on
 filetype indent on
 filetype plugin on
-nmap <leader>a :set filetype=awk        <CR>
-nmap <leader>c :set filetype=css        <CR>
-nmap <leader>d :set filetype=htmldjango <CR>
-nmap <leader>e :set filetype=sed        <CR>
-nmap <leader>g :set filetype=go         <CR>
-nmap <leader>h :set filetype=html       <CR>
-nmap <leader>j :set filetype=javascript <CR>
-nmap <leader>l :set filetype=lua        <CR>
-nmap <leader>m :set filetype=markdown   <CR>
-nmap <leader>p :set filetype=php        <CR>
-nmap <leader>s :set filetype=sh         <CR>
-nmap <leader>v :set filetype=vim        <CR>
-nmap <leader>y :set filetype=python     <CR>
+" nmap <leader>a :set filetype=awk        <CR>
+" nmap <leader>c :set filetype=css        <CR>
+" nmap <leader>d :set filetype=htmldjango <CR>
+" nmap <leader>e :set filetype=sed        <CR>
+" nmap <leader>g :set filetype=go         <CR>
+" nmap <leader>h :set filetype=html       <CR>
+" nmap <leader>j :set filetype=javascript <CR>
+" nmap <leader>l :set filetype=lua        <CR>
+" nmap <leader>m :set filetype=markdown   <CR>
+" nmap <leader>p :set filetype=php        <CR>
+" nmap <leader>s :set filetype=sh         <CR>
+" nmap <leader>v :set filetype=vim        <CR>
+" nmap <leader>y :set filetype=python     <CR>
 
 " tell plugins the default bash
 let g:is_bash=1
@@ -60,7 +60,7 @@ set smarttab
 set shiftwidth=4 " first line
 set tabstop=4    " other lines
 set expandtab
-
+set nowrap       " do not fold the code default
 
 " interface setting
 syntax on
@@ -136,11 +136,10 @@ let g:netrw_winsize = 20            " set the size
 let g:netrw_browse_split = 4        " open in previous window
 let g:netrw_liststyle = 3           " tree explorer style
 let g:netrw_localrmdir = 'trash'    " remove file by trash
-
+let g:netrw_list_hide= '.*\.swp$,.*\.git,__pycache__'
 
 "
 " read the config of plugins
 "
 source ~/.vim/plugins.vim
-
 

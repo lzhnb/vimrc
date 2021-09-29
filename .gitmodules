@@ -25,3 +25,15 @@
 [submodule "pack/plugins/start/vim-which-key"]
 	path = pack/plugins/start/vim-which-key
 	url = git@github.com:liuchengxu/vim-which-key.git
+[submodule "pack/plugins/start/vim-surround"]
+	path = pack/plugins/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "pack/plugins/start/supertab"]
+	path = pack/plugins/start/supertab
+	url = git@github.com:ervandew/supertab.git
+[submodule "pack/plugins/start/vim-lsp"]
+	path = pack/plugins/start/vim-lsp
+	url = git@github.com:prabirshrestha/vim-lsp.git
+[submodule "pack/plugins/start/jedi-vim"]
+	path = pack/plugins/start/jedi-vim
+	url = git@github.com:davidhalter/jedi-vim.git
