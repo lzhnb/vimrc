@@ -260,7 +260,7 @@ call s:h("StatusLineTerm", { "fg": s:white, "bg": s:cursor_grey }) " status line
 call s:h("StatusLineTermNC", { "fg": s:comment_grey }) " status line of non-current :terminal window
 call s:h("TabLine", { "fg": s:comment_grey }) " tab pages line, not active tab page label
 call s:h("TabLineFill", {}) " tab pages line, where there are no labels
-call s:h("TabLineSel", { "fg": s:white }) " tab pages line, active tab page label
+call s:h("TabLineSel", { "fg": s:black, "bg": s:red}) " tab pages line, active tab page label
 call s:h("Terminal", { "fg": s:white, "bg": s:black }) " terminal window (see terminal-size-color)
 call s:h("Title", { "fg": s:green }) " titles for output from ":set all", ":autocmd" etc.
 call s:h("Visual", { "bg": s:visual_grey }) " Visual mode selection
@@ -625,54 +625,25 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
 " }}}
 
-" Neovim-Specific Highlighting {{{
-
-if has("nvim")
-  " Neovim terminal colors {{{
-  let g:terminal_color_0 =  s:black.gui
-  let g:terminal_color_1 =  s:red.gui
-  let g:terminal_color_2 =  s:green.gui
-  let g:terminal_color_3 =  s:yellow.gui
-  let g:terminal_color_4 =  s:blue.gui
-  let g:terminal_color_5 =  s:purple.gui
-  let g:terminal_color_6 =  s:cyan.gui
-  let g:terminal_color_7 =  s:white.gui
-  let g:terminal_color_8 =  s:visual_grey.gui
-  let g:terminal_color_9 =  s:dark_red.gui
-  let g:terminal_color_10 = s:green.gui " No dark version
-  let g:terminal_color_11 = s:dark_yellow.gui
-  let g:terminal_color_12 = s:blue.gui " No dark version
-  let g:terminal_color_13 = s:purple.gui " No dark version
-  let g:terminal_color_14 = s:cyan.gui " No dark version
-  let g:terminal_color_15 = s:comment_grey.gui
-  let g:terminal_color_background = s:background.gui
-  let g:terminal_color_foreground = s:foreground.gui
-  " }}}
-
-  " Neovim Diagnostics {{{
-  call s:h("DiagnosticError", { "fg": s:red })
-  call s:h("DiagnosticWarn", { "fg": s:yellow })
-  call s:h("DiagnosticInfo", { "fg": s:blue })
-  call s:h("DiagnosticHint", { "fg": s:cyan })
-  call s:h("DiagnosticUnderlineError", { "fg": s:red, "gui": "underline", "cterm": "underline" })
-  call s:h("DiagnosticUnderlineWarn", { "fg": s:yellow, "gui": "underline", "cterm": "underline" })
-  call s:h("DiagnosticUnderlineInfo", { "fg": s:blue, "gui": "underline", "cterm": "underline" })
-  call s:h("DiagnosticUnderlineHint", { "fg": s:cyan, "gui": "underline", "cterm": "underline" })
-  " }}}
-
-  " Neovim LSP (for versions < 0.5.1) {{{
-  hi link LspDiagnosticsDefaultError DiagnosticError
-  hi link LspDiagnosticsDefaultWarning DiagnosticWarn
-  hi link LspDiagnosticsDefaultInformation DiagnosticInfo
-  hi link LspDiagnosticsDefaultHint DiagnosticHint
-  hi link LspDiagnosticsUnderlineError DiagnosticUnderlineError
-  hi link LspDiagnosticsUnderlineWarning DiagnosticUnderlineWarn
-  hi link LspDiagnosticsUnderlineInformation DiagnosticUnderlineInfo
-  hi link LspDiagnosticsUnderlineHint DiagnosticUnderlineHint
-  " }}}
-endif
-
+" myself
+" vim-buftabline{{{
+hi link BufTabLineCurrent TabLineSel
+hi link BufTabLineActive TabLine
+hi link BufTabLineHidden TabLineFill
+hi link BufTabLineFill TabLineFill
 " }}}
+
+" netrw
+hi link netrwDir Green
+hi link netrwClassify Green
+hi link netrwLink Grey
+hi link netrwSymLink Fg
+hi link netrwExe Red
+hi link netrwComment Grey
+hi link netrwList Yellow
+hi link netrwHelpCmd Blue
+hi link netrwCmdSep Grey
+hi link netrwVersion Purple
 
 " Must appear at the end of the file to work around this oddity:
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
