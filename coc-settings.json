@@ -1,0 +1,31 @@
+{
+    "pyright.enable": true,
+    "pyright.server": "/usr/bin/pyright-langserver",
+    "pyright.organizeimports.provider": "pyright",
+    "python.pythonPath": "~/miniconda3/envs/py38/bin/python",
+    "python.formatting.provider": "yapf",
+    "python.formatting.yapfPath": "~/miniconda3/envs/py38/bin/yapf",
+    "python.formatting.yapfArgs": [
+        "--style",
+        "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false,
+    "explorer": {
+        "file": {
+            "showHiddenFiles": false,
+            "column": {
+                "git.showIgnored": true,
+                "indent.indentLine": true
+            }
+        },
+        "width": 50,
+        "position": "right",
+        "quitOnOpen": true,
+        "PreviewActionStrategy": "content",
+        "icon": {
+            "enableNerdfont": true,
+        }
+    }
+}
+

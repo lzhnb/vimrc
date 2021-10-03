@@ -20,19 +20,6 @@ set t_Co=256    " make vim look better in putty
 filetype on
 filetype indent on
 filetype plugin on
-" nmap <leader>a :set filetype=awk        <CR>
-" nmap <leader>c :set filetype=css        <CR>
-" nmap <leader>d :set filetype=htmldjango <CR>
-" nmap <leader>e :set filetype=sed        <CR>
-" nmap <leader>g :set filetype=go         <CR>
-" nmap <leader>h :set filetype=html       <CR>
-" nmap <leader>j :set filetype=javascript <CR>
-" nmap <leader>l :set filetype=lua        <CR>
-" nmap <leader>m :set filetype=markdown   <CR>
-" nmap <leader>p :set filetype=php        <CR>
-" nmap <leader>s :set filetype=sh         <CR>
-" nmap <leader>v :set filetype=vim        <CR>
-" nmap <leader>y :set filetype=python     <CR>
 
 " tell plugins the default bash
 let g:is_bash=1
@@ -129,14 +116,7 @@ function! ToggleNetrw()
     endif
 endfunction
 
-map <C-E> :call ToggleNetrw()<CR>
-let g:netrw_dirhistmax = 0          " do not generate .netrwhist
-let g:netrw_banner = 0              " hide the banner
-let g:netrw_winsize = 20            " set the size
-let g:netrw_browse_split = 4        " open in previous window
-let g:netrw_liststyle = 3           " tree explorer style
-let g:netrw_localrmdir = 'trash'    " remove file by trash
-let g:netrw_list_hide= '.*\.swp$,.*\.git,__pycache__'
+nmap <C-E> :CocCommand explorer<CR>
 
 "
 " read the config of plugins
