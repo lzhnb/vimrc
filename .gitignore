@@ -1,6 +1,7 @@
 # directories
 cache
 .jedi
+bundles
 
 # files
 *.log

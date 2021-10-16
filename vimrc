@@ -116,9 +116,6 @@ function! ToggleNetrw()
     endif
 endfunction
 
-let g:coc_disable_startup_warning = 1
-nmap <C-E> :CocCommand explorer<CR>
-
 "
 " read the config of plugins
 "
