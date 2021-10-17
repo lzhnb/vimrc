@@ -69,14 +69,13 @@ set textwidth=0       " maximum width of text that is being inserted
 set cursorline        " highlight current line
 nnoremap <F3> :set hlsearch!<CR> 
 
-
 " terminal
 nnoremap <F5> :wa<CR>:vertical botright terminal ++kill=terminal<CR>
 
 " buffer setting
 set hidden " hide the buffer files
-nmap <C-J> :bnext<CR>
-nmap <C-K> :bprev<CR>
+nmap <C-J> :bprev<CR>
+nmap <C-K> :bnext<CR>
 nmap <C-D> :bdelete<CR>
 
 " path setting
@@ -88,36 +87,9 @@ set undodir=~/.vimtmp/undodir " set the undo directory
 " ignore some files and dirs to accelerate search(ctrlp)
 set wildignore+=*.git\\*,*.tgz,*.zip,*.url,*.pyc,*.class
 
-"
-" syntastic
-"
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_quiet_messages = { "level": "errors" }
-
-"
-" Netrw(replace NERDTree)
-"
-let g:NetrwIsOpen=0
-
-function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i 
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Vexplore!
-        set number
-    endif
-endfunction
 
 "
 " read the config of plugins
 "
-source ~/.vim/plugins.vim
+source $HOME/.vim/plugins.vim
 
